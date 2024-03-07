@@ -161,7 +161,7 @@
                                                 <td>{{ $dat->nama_buku }}</td>
                                                 <td class="font-weight-bold">{{ $dat->harga }}</td>
                                                 <td class="font-weight-bold">{{ $dat->stok }}</td>
-                                                <td>{{ $dat->nama }}</td>
+                                                <td>{{ $dat->penerbit->nama }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

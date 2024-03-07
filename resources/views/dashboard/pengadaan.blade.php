@@ -35,10 +35,10 @@
                         <div class="card-body">
                             <div class="row justify-content-between">
                                 <div class="mx-3">
-                                    <p class="card-title">Tabel Buku</p>
+                                    <p class="card-title">Tabel Pengadaan</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <form action="{{ route('dashboard') }}" method="get">
+                                    <form action="{{ route('pengadaan') }}" method="get">
                                         <div class="input-group mb-2">
                                             <input type="text" class="form-control" placeholder="Nama Buku ..."
                                                 name="search">
@@ -53,11 +53,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kode</th>
-                                            <th>Kategori</th>
                                             <th>Nama Buku</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
                                             <th>Penerbit</th>
                                         </tr>
                                     </thead>
@@ -65,12 +61,8 @@
                                         @foreach ($data as $dat)
                                             <tr>
                                                 <td>{{ ++$no }}</td>
-                                                <td>{{ $dat->buku.kode }}</td>
-                                                <td>{{ $dat->kategori }}</td>
                                                 <td>{{ $dat->nama_buku }}</td>
-                                                <td class="font-weight-bold">{{ $dat->harga }}</td>
-                                                <td class="font-weight-bold">{{ $dat->stok }}</td>
-                                                <td>{{ $dat->nama }}</td>
+                                                <td>{{ $dat->penerbit->nama }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

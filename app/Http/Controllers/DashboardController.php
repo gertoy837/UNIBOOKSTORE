@@ -15,24 +15,22 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $cari = $request->get('search');
-        $data = DB::table('buku')
-        ->where('nama_buku', 'LIKE', "%$cari%")
-        ->join('penerbit', 'buku.penerbit_id', '=', 'penerbit.id')
-        ->Paginate(5);
+        $data = Buku::with('penerbit')
+            ->where('nama_buku', 'LIKE', "%$cari%")
+            ->Paginate(5);
         $no = 5 * ($data->currentPage() - 1);
-        // $data = Buku::with('penerbit')->get();
         return view('dashboard', compact('data', 'no', 'cari'));
     }
 
     public function index1(Request $request)
     {
         $cari = $request->get('search');
-        $data = DB::table('buku')
-        ->where('nama_buku', 'LIKE', "%$cari%")
-        ->join('penerbit', 'buku.penerbit_id', '=', 'penerbit.id')
-        ->Paginate(5);
+        $data = Buku::with('penerbit')
+            ->orderBy('stok', 'asc')
+            ->select('nama_buku', 'penerbit_id')
+            ->where('nama_buku', 'LIKE', "%$cari%")
+            ->paginate(5);
         $no = 5 * ($data->currentPage() - 1);
-        // $data = Buku::with('penerbit')->get();
         return view('dashboard/pengadaan', compact('data', 'no', 'cari'));
     }
 

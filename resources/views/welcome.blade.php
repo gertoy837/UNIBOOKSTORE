@@ -170,9 +170,6 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Admin</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Pengadaan</a></li>
                     @if (Route::has('login'))
                         <ul class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                             @auth
@@ -206,13 +203,12 @@
                     id="isian">
                     <h1>UNIBOOKSTORE</h1>
                     <h2>
-                        Sistem Informasi Inventaris Pesantren atau yang disingkat menjadi
-                        "Siventren" adalah untuk mendata aset atau inventaris barang,
+                        Sistem Data Buku,
                         mengawasi perpindahan, penanggungjawab, dan penggunaannya serta
                         menghitung penyusunan dan mengurangi risiko hilangnya data aset.
                     </h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="daftar.html" class="btn-get-started scrollto">Daftar Sekarang</a>
+                        <a href="{{ route('login')}}" class="btn-get-started scrollto">Login</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -605,7 +601,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <img src="{{ asset('dist') }}/template1/img/1111.png" alt="" class="" />
+                    <h1>UNIBOOKSTORE</h1>
                         <p>
                             Kp. Panyaweuyan RT. 03/01<br />
                             Desa. Ciherang Kec. Pacet<br />
@@ -680,7 +676,7 @@
 
         <div class="container footer-bottom clearfix">
             <div class="copyright">
-                &copy; Copyright 2023 <strong><span>SIVENTREN</span></strong>. All Rights Reserved
+                &copy; Copyright 2024 <strong><span>UNIBOOKSTORE</span></strong>. All Rights Reserved
             </div>
         </div>
     </footer>
