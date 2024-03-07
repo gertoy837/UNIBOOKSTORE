@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('kode');
             $table->string('kategori');
             $table->string('nama_buku');
-            $table->double('harga', 8, 3);
+            $table->integer('harga');
             $table->integer('stok');
             $table->unsignedBigInteger('penerbit_id');
             $table->foreign('penerbit_id')->references('id')->on('penerbit');

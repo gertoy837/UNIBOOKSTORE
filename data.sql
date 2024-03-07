@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 07 Mar 2024 pada 02.14
+-- Waktu pembuatan: 07 Mar 2024 pada 05.36
 -- Versi server: 10.6.16-MariaDB-0ubuntu0.22.04.1
 -- Versi PHP: 8.2.15
 
@@ -32,7 +32,7 @@ CREATE TABLE `buku` (
   `kode` varchar(255) NOT NULL,
   `kategori` varchar(255) NOT NULL,
   `nama_buku` varchar(255) NOT NULL,
-  `harga` double(8,2) NOT NULL,
+  `harga` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
   `penerbit_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -44,11 +44,11 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `kode`, `kategori`, `nama_buku`, `harga`, `stok`, `penerbit_id`, `created_at`, `updated_at`) VALUES
-(1, 'K1001\r\n', 'Keilmuan', 'Analisis & Perancangan Sistem Informasi', 50.00, 60, 1, NULL, NULL),
-(2, 'K1002', 'Keilmuan', 'Artifical Intelligence', 45.00, 60, 1, NULL, NULL),
-(3, 'K2003', 'Keilmuan', 'Autocad 3 Dimensi', 40.00, 45, 1, NULL, NULL),
-(4, 'B1001', 'Bisnis', 'Etika Bisnis', 67.50, 10, 2, NULL, NULL),
-(5, 'N1001', 'Novel', 'Cahaya Di Penjuru Hati', 68.00, 12, 3, NULL, NULL);
+(1, 'K1001\r\n', 'Keilmuan', 'Analisis & Perancangan Sistem Informasi', 50000, 60, 1, NULL, NULL),
+(2, 'K1002', 'Keilmuan', 'Artifical Intelligence', 45000, 60, 1, NULL, NULL),
+(3, 'K2003', 'Keilmuan', 'Autocad 3 Dimensi', 40000, 45, 1, NULL, NULL),
+(4, 'B1001', 'Bisnis', 'Etika Bisnis', 67500, 10, 2, NULL, NULL),
+(5, 'N1001', 'Novel', 'Cahaya Di Penjuru Hati', 68000, 12, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -83,12 +83,12 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2024_03_07_020056_create_penerbits_table', 1),
-(6, '2024_03_07_020101_create_bukus_table', 1);
+(19, '2014_10_12_000000_create_users_table', 1),
+(20, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(21, '2019_08_19_000000_create_failed_jobs_table', 1),
+(22, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(23, '2024_03_07_020056_create_penerbits_table', 1),
+(24, '2024_03_07_020101_create_bukus_table', 1);
 
 -- --------------------------------------------------------
 
@@ -235,7 +235,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `penerbit`
